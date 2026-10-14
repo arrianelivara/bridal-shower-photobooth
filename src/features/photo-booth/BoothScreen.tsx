@@ -82,7 +82,9 @@ export function BoothScreen({
                 ? 'Three-frame strip'
                 : layout === 'story3'
                   ? 'IG Story · 3 photos'
-                  : 'One lovely portrait'}
+                  : layout === 'portrait2'
+                    ? 'IG Portrait · 2 photos'
+                    : 'One lovely portrait'}
           </h2>
         </div>
         <p className="rounded-full border border-blush bg-ivory/90 px-3 py-1 text-xs text-taupe">

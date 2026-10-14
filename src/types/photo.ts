@@ -1,6 +1,6 @@
 export type AppStep = 'welcome' | 'booth' | 'review' | 'preview'
 
-export type LayoutType = 'strip2' | 'strip3' | 'single' | 'story3'
+export type LayoutType = 'strip2' | 'strip3' | 'single' | 'story3' | 'portrait2'
 
 export type CapturePhase = 'ready' | 'countdown' | 'flash' | 'review'
 
@@ -62,7 +62,7 @@ export interface GuestbookEntry {
 }
 
 export function shotCountForLayout(layout: LayoutType): number {
-  if (layout === 'strip2') return 2
+  if (layout === 'strip2' || layout === 'portrait2') return 2
   if (layout === 'strip3' || layout === 'story3') return 3
   return 1
 }
@@ -73,6 +73,11 @@ export function isStripLayout(layout: LayoutType): boolean {
 
 export function isStoryLayout(layout: LayoutType): boolean {
   return layout === 'story3'
+}
+
+/** Two phone-portrait frames on the Instagram Story canvas. */
+export function isPortraitLayout(layout: LayoutType): boolean {
+  return layout === 'portrait2'
 }
 
 export function defaultCompositionSettings(

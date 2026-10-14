@@ -283,7 +283,7 @@ export function ReviewScreen({
           <div className="space-y-3 p-3 sm:p-4">
             <fieldset className="space-y-2">
               <legend className="font-serif text-lg text-ink">Layout</legend>
-              <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                 <OptionButton
                   selected={settings.layout === 'strip2'}
                   disabled={photos.length < 2 || generating}
@@ -311,6 +311,13 @@ export function ReviewScreen({
                   onClick={() => setLayout('story3')}
                   title="IG Story"
                   detail={photos.length < 3 ? 'Needs 3' : '1080×1920'}
+                />
+                <OptionButton
+                  selected={settings.layout === 'portrait2'}
+                  disabled={photos.length < 2 || generating}
+                  onClick={() => setLayout('portrait2')}
+                  title="IG Portrait"
+                  detail={photos.length < 2 ? 'Needs 2' : '1080×1920'}
                 />
               </div>
             </fieldset>

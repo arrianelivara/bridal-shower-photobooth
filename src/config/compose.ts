@@ -92,19 +92,6 @@ export function frameTheme(background: FrameBackground) {
   )
 }
 
-export function canvasFilterFor(filter: PhotoFilter): string {
-  switch (filter) {
-    case 'bw':
-      return 'grayscale(1) contrast(1.05)'
-    case 'warm':
-      return 'sepia(0.28) saturate(1.15) brightness(1.04)'
-    case 'dreamy':
-      return 'contrast(0.92) saturate(1.2) brightness(1.06)'
-    default:
-      return 'none'
-  }
-}
-
 export function stickerSrc(id: StickerId): string {
   return STICKER_OPTIONS.find((item) => item.id === id)?.src ?? ''
 }

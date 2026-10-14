@@ -45,7 +45,7 @@ export function WelcomeScreen({
           <p className="mb-3 text-[0.7rem] font-medium uppercase tracking-[0.28em] text-taupe/65">
             Choose your template
           </p>
-          <div className="grid grid-cols-4 gap-2 sm:gap-4">
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-5 sm:gap-4">
             <LayoutChoice
               selected={layout === 'strip2'}
               label="2"
@@ -74,6 +74,14 @@ export function WelcomeScreen({
               bars={3}
               tall
               onClick={() => onLayoutChange('story3')}
+            />
+            <LayoutChoice
+              selected={layout === 'portrait2'}
+              label="2"
+              detail="portrait"
+              bars={2}
+              tall
+              onClick={() => onLayoutChange('portrait2')}
             />
           </div>
         </div>

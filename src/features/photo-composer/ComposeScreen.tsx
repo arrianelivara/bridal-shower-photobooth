@@ -88,7 +88,7 @@ export function ComposeScreen({
         <div className="space-y-5 rounded-[2rem] border border-blush/70 bg-ivory/90 p-5 shadow-soft sm:p-6">
           <fieldset className="space-y-3">
             <legend className="font-serif text-2xl text-ink">Layout</legend>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               <OptionButton
                 selected={settings.layout === 'strip2'}
                 disabled={photos.length < 2}
@@ -115,6 +115,13 @@ export function ComposeScreen({
                 onClick={() => setLayout('story3')}
                 title="IG Story"
                 detail={photos.length < 3 ? 'Needs 3' : '1080×1920'}
+              />
+              <OptionButton
+                selected={settings.layout === 'portrait2'}
+                disabled={photos.length < 2}
+                onClick={() => setLayout('portrait2')}
+                title="IG Portrait"
+                detail={photos.length < 2 ? 'Needs 2' : '1080×1920'}
               />
             </div>
           </fieldset>
